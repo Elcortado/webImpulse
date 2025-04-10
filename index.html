@@ -51,15 +51,15 @@
           event.preventDefault(); // Evita el envío por defecto del formulario
 
           // Obtener los valores del formulario
-          const nombre = document.getElementById('name').value;
-          const mail = document.getElementById('email').value;
-          const mensaje = document.getElementById('message').value;
+          const nombre = document.getElementById('nombre').value;
+          const email = document.getElementById('email').value;
+          const mensaje = document.getElementById('mensaje').value;
 
           // Enviar el correo utilizando EmailJS
           emailjs.send("service_5hhik7e", "template_xm9ph5o", {
-              nombre: name,
-              mail: email,
-              mensaje: message
+              nombre: nombre,
+              email: email,
+              mensaje: mensaje
           })
           .then(function(response) {
               alert('Email enviado exitosamente!');
@@ -472,15 +472,15 @@
           event.preventDefault(); // Evita el envío por defecto del formulario
 
           // Obtener los valores del formulario
-          const nombre = document.getElementById('name').value;
-          const mail = document.getElementById('email').value;
-          const mensaje = document.getElementById('message').value;
+          const nombre = document.getElementById('nombre').value;
+          const email = document.getElementById('email').value;
+          const mensaje = document.getElementById('mensaje').value;
 
           // Enviar el correo utilizando EmailJS
           emailjs.send("service_5hhik7e", "template_xm9ph5o", {
-              nombre: name,
-              mail: email,
-              mensaje: message
+              nombre: nombre,
+              email: email,
+              mensaje: mensaje
           })
           .then(function(response) {
               alert('Email enviado exitosamente!');
