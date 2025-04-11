@@ -42,38 +42,29 @@
       crossorigin="anonymous"
     ></script>
     
-   <script
-   type="text/javascript"
-   src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
- </script>
- <script type="text/javascript">
-   (function() {
-       // https://dashboard.emailjs.com/admin/account
-       emailjs.init({
-         publicKey: "xrbeSvoyj25R0EkAf",
-       });
-   })();
-</script>
-<script type="text/javascript">
-   window.onload = function() {
-       document.getElementById('enviarEmail').addEventListener('submit', function(event) {
-           event.preventDefault();
-           const formData = {
-   from_name: document.getElementById('nombre').value,
-   from_email: document.getElementById('email').value,
-   message: document.getElementById('mensaje').value
- };
- 
-           // these IDs from the previous steps
-           emailjs.sendForm('service_5hhik7e', 'template_xm9ph5o', this)
-               .then(() => {
-                   console.log('SUCCESS!');
-               }, (error) => {
-                   console.log('FAILED...', error);
-               });
-       });
-   }
-</script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "xrbeSvoyj25R0EkAf",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_5hhik7e', 'template_xm9ph5o', this)
+                    .then(() => {
+                        console.log('SUCCESS!');
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
   </head>
 
   <body>
@@ -185,7 +176,7 @@
           <div class="col-md-12 section-title text-center">
             <h3>Nuestros Servicios</h3>
             <p>
-              Somos expertos en crear landing pages optimizadas para
+              Creamos Landing Pages optimizadas para
               dispositivos móviles, asegurando que tus clientes potenciales
               tengan una experiencia impecable y atractiva en cualquier
               pantalla. Además, ofrecemos servicios integrales de gestión de
@@ -234,7 +225,30 @@
               </div>
             </div>
           </div>
-        </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-30">
+            <div class="service-box bg-white text-center">
+              <div class="icon"><i class="fa-solid fa-house"></i></div>
+              <div class="icon-text">
+                <h4 class="title-box">Hosting Gratis. Oportunidad Sin Límites!</h4>
+                <p>
+                  Con el Alojamiento Gratuito de tú Landing Page, rompemos las barreras para que tu proyecto web despegue sin costo alguno.
+                   Escala sin restricciones y enfoca tus recursos en lo que realmente importa: hacer crecer tu idea. Sin letra chica, sin cargos ocultos, solo el impulso que necesitas para crecer en internet.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-30">
+            <div class="service-box bg-white text-center">
+              <div class="icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+              <div class="icon-text">
+                <h4 class="title-box">Soporte Digital 360°: Actualizamos y Optimizamos tu Presencia Online</h4>
+                <p>
+                  Podrás elegir entre distintos Pack's, de acuerdo a tu necesidad de modificar productos, servicios y costos, para que tu sitio se mantenga siempre actualizado y optimizado. Ésto garantiza que tus sistemas digitales estén siempre listos para convertir visitantes en clientes.
+                </p>
+              </div>
+            </div>
+          </div>
+          </div>
       </div>
     </div>
 
@@ -428,21 +442,18 @@
           <div class="col-lg-7 col-md-8">
             <div class="contact-form">
               
-    <form onsubmit="enviarEmail(event)">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required><br><br>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-        
-        <label for="mensaje">Mensaje:</label><br>
-        <textarea id="mensaje" name="mensaje" required></textarea><br><br>
-        
+    <form id="contact-form">
+      <label>Nombre</label>
+      <input type="text" name="name" required>
+      <label>Email</label>
+      <input type="email" name="email" required>
+      
+      <label>Mensaje</label>
+      <textarea name="message" required></textarea>
         <div class="col-lg-12 text-center">
           <button type="submit" class="bttn">Enviar</button>
         </div>
     </form>
-                    
                   </div>
                 </div>
               </form>
@@ -466,38 +477,30 @@
         </div>
       </div>
     </footer>
-    <script
-    type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-  </script>
-  <script type="text/javascript">
-    (function() {
-        // https://dashboard.emailjs.com/admin/account
-        emailjs.init({
-          publicKey: "xrbeSvoyj25R0EkAf",
-        });
-    })();
-</script>
-<script type="text/javascript">
-    window.onload = function() {
-        document.getElementById('enviarEmail').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const formData = {
-    from_name: document.getElementById('nombre').value,
-    from_email: document.getElementById('email').value,
-    message: document.getElementById('mensaje').value
-  };
-  
-            // these IDs from the previous steps
-            emailjs.sendForm('service_5hhik7e', 'template_xm9ph5o', this)
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "xrbeSvoyj25R0EkAf",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_5hhik7e', 'template_xm9ph5o', this)
                 .then(() => {
-                    console.log('SUCCESS!');
-                }, (error) => {
-                    console.log('FAILED...', error);
-                });
-        });
-    }
-</script>
+                        alert ('SUCCESS!');
+                        document.getElementById('contact-form').reset();
+                    }, (error) => {
+                        alert('FAILED...', error);
+                    });
+            });
+        }
+    </script>
     <script
       src="https://kit.fontawesome.com/9485b75ac0.js"
       crossorigin="anonymous"
