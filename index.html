@@ -41,35 +41,39 @@
       src="https://kit.fontawesome.com/9485b75ac0.js"
       crossorigin="anonymous"
     ></script>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-      (function() {
-          emailjs.init("xrbeSvoyj25R0EkAf"); // Reemplaza "tu_user_id" con tu User ID de EmailJS
-      })();
-      
-      function enviarEmail(event) {
-          event.preventDefault(); // Evita el envío por defecto del formulario
-
-          // Obtener los valores del formulario
-          const nombre = document.getElementById('nombre').value;
-          const email = document.getElementById('email').value;
-          const mensaje = document.getElementById('mensaje').value;
-
-          // Enviar el correo utilizando EmailJS
-          emailjs.send("service_5hhik7e", "template_xm9ph5o", {
-              nombre: nombre,
-              email: email,
-              mensaje: mensaje
-          })
-          .then(function(response) {
-              alert('Email enviado exitosamente!');
-              console.log('Éxito!', response.status, response.text);
-          }, function(error) {
-              alert('Error al enviar el email.');
-              console.log('Error:', error);
-          });
-      }
-  </script>
+    
+   <script
+   type="text/javascript"
+   src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+ </script>
+ <script type="text/javascript">
+   (function() {
+       // https://dashboard.emailjs.com/admin/account
+       emailjs.init({
+         publicKey: "xrbeSvoyj25R0EkAf",
+       });
+   })();
+</script>
+<script type="text/javascript">
+   window.onload = function() {
+       document.getElementById('enviarEmail').addEventListener('submit', function(event) {
+           event.preventDefault();
+           const formData = {
+   from_name: document.getElementById('nombre').value,
+   from_email: document.getElementById('email').value,
+   message: document.getElementById('mensaje').value
+ };
+ 
+           // these IDs from the previous steps
+           emailjs.sendForm('service_5hhik7e', 'template_xm9ph5o', this)
+               .then(() => {
+                   console.log('SUCCESS!');
+               }, (error) => {
+                   console.log('FAILED...', error);
+               });
+       });
+   }
+</script>
   </head>
 
   <body>
@@ -435,7 +439,7 @@
         <textarea id="mensaje" name="mensaje" required></textarea><br><br>
         
         <div class="col-lg-12 text-center">
-          <button class="bttn">Enviar</button>
+          <button type="submit" class="bttn">Enviar</button>
         </div>
     </form>
                     
@@ -462,35 +466,38 @@
         </div>
       </div>
     </footer>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-      (function() {
-          emailjs.init("xrbeSvoyj25R0EkAf"); // Reemplaza "tu_user_id" con tu User ID de EmailJS
-      })();
-      
-      function enviarEmail(event) {
-          event.preventDefault(); // Evita el envío por defecto del formulario
-
-          // Obtener los valores del formulario
-          const nombre = document.getElementById('nombre').value;
-          const email = document.getElementById('email').value;
-          const mensaje = document.getElementById('mensaje').value;
-
-          // Enviar el correo utilizando EmailJS
-          emailjs.send("service_5hhik7e", "template_xm9ph5o", {
-              nombre: nombre,
-              email: email,
-              mensaje: mensaje
-          })
-          .then(function(response) {
-              alert('Email enviado exitosamente!');
-              console.log('Éxito!', response.status, response.text);
-          }, function(error) {
-              alert('Error al enviar el email.');
-              console.log('Error:', error);
-          });
-      }
+    <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
   </script>
+  <script type="text/javascript">
+    (function() {
+        // https://dashboard.emailjs.com/admin/account
+        emailjs.init({
+          publicKey: "xrbeSvoyj25R0EkAf",
+        });
+    })();
+</script>
+<script type="text/javascript">
+    window.onload = function() {
+        document.getElementById('enviarEmail').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = {
+    from_name: document.getElementById('nombre').value,
+    from_email: document.getElementById('email').value,
+    message: document.getElementById('mensaje').value
+  };
+  
+            // these IDs from the previous steps
+            emailjs.sendForm('service_5hhik7e', 'template_xm9ph5o', this)
+                .then(() => {
+                    console.log('SUCCESS!');
+                }, (error) => {
+                    console.log('FAILED...', error);
+                });
+        });
+    }
+</script>
     <script
       src="https://kit.fontawesome.com/9485b75ac0.js"
       crossorigin="anonymous"
